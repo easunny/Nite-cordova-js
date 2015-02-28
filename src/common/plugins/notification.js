@@ -58,7 +58,7 @@
          */
         confirm: function(message, resultCallback, title, buttonLabels) {
             var _title = (title || "Confirm");
-            var _buttonLabels = (buttonLabels || ["OK", "Cancel"]);
+            var _buttonLabels = (buttonLabels || ["Cancel","OK"]);
 
             // Strings are deprecated!
             if (typeof _buttonLabels === 'string') {
@@ -102,5 +102,27 @@
             cancelTitle = cancelTitle || '取消';
             title = title || null;
             exec(success || function(){}, fail || function(){}, "Notification", "actionSheet", [titleList,confirmTitle,cancelTitle,title]);
+        },
+
+        /**
+         * 显示加载菊花
+         */
+        showLoading : function(){
+            exec(function(){
+
+            }, function(){
+
+            }, 'Notification', 'showLoading',[]);
+        },
+
+        /**
+         * 关闭菊花
+         */
+        hideLoading : function(){
+            exec(function(){
+
+            }, function(){
+
+            }, 'Notification', 'hideLoading',[]);
         }
     };

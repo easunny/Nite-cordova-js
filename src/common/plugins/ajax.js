@@ -48,8 +48,8 @@
             headersData : {},
             //超时
             timeout: 0,
-            //使用原生的非APP内修改的user-agent
-            userAgent : false
+            //使用原生的一些参数 不带APP的一些参数等...
+            originSet : false
         };
         function empty() {
         }
@@ -74,7 +74,7 @@
                 var status = 'error';
                 var xhr = null;
                 //deferred.reject(xhr,status,error);
-                settings.error && settings.error(xhr,status,error);
+                settings.error && settings.error(error,status,xhr);
                 settings.complete && settings.complete(xhr,status);
             }, "Ajax", "ajax", [settings]);
             //return promise;

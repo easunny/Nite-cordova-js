@@ -64,9 +64,14 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     // defaults
-    grunt.registerTask('default', ['build', 'test']);
+    grunt.registerTask('default', ['compile:ios','cp']);
     grunt.registerTask('build', ['compile', 'jshint', 'whitespace-check']);
     grunt.registerTask('test', ['compile', '_test']);
     grunt.registerTask('btest', ['compile', '_btest']);
     grunt.registerTask('cover', ['compile', '_cover']);
+
+    //拷贝到f2e
+    grunt.registerTask('cp', function(){
+        grunt.file.copy('pkg/cordova.ios.js','../f2e/src/base/lib/cordova.js');
+    });
 };

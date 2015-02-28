@@ -20,6 +20,19 @@
 -->
 A unified JavaScript layer for [Apache Cordova](http://cordova.apache.org/) projects.
 
+# 修改之处
+
+原先cordova.js的插件加载是外部加载的方式 作者修改过之后直接可以打包进去 还是一个文件的方式 不然文件太多不适合部署
+
+# 打包
+
+暂时只有IOS平台 执行`grunt`即可生成cordova.js&拷贝到前端框架中
+
+# 开发一个插件
+
+1. 插件定义请参考[src/common/plugin_list.js](src/common/plugin_list.js)
+2. 插件内容请参考[src/common/plugins/](src/common/plugins/)文件夹下的任何一个插件
+
 # Project Structure
 
     ./

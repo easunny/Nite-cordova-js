@@ -38,6 +38,9 @@ var argscheck = require('cordova/argscheck'),
      */
     Navigation.prototype.rightitem = {
         setTitle: function (title) {
+            if(title.length > 5){
+                title = title.substr(0,5) + '...';
+            }
             exec(function () {
             }, function () {
             }, "Navigation", "setRightTitle", [title]);
@@ -55,6 +58,9 @@ var argscheck = require('cordova/argscheck'),
      */
     Navigation.prototype.leftitem = {
         setTitle: function (title) {
+            if(title.length > 5){
+                title = title.substr(0,5) + '...';
+            }
             exec(function () {
             }, function () {
             }, "Navigation", "setLeftTitle", [title]);
