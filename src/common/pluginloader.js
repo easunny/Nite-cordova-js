@@ -116,12 +116,17 @@ function findCordovaPath() {
 exports.load = function(callback) {
     var pathPrefix = findCordovaPath();
     if (pathPrefix === null) {
-        console.log('Could not find cordova.js script tag. Plugin loading may fail.');
+        //console.log('Could not find cordova.js script tag. Plugin loading may fail.');
         pathPrefix = '';
     }
-    injectIfNecessary('cordova/plugin_list', pathPrefix + 'cordova_plugins.js', function() {
-        var moduleList = require("cordova/plugin_list");
-        handlePluginsObject(pathPrefix, moduleList, callback);
-    }, callback);
+
+    //打包进去了 故不用去异步加载js 直接执行onScriptLoadingComplete 即可
+    var moduleList = require("cordova/plugin_list");
+    onScriptLoadingComplete(moduleList, callback);
+
+    // injectIfNecessary('cordova/plugin_list', pathPrefix + 'cordova_plugins.js', function() {
+    //     var moduleList = require("cordova/plugin_list");
+    //     handlePluginsObject(pathPrefix, moduleList, callback);
+    // }, callback);
 };
 
