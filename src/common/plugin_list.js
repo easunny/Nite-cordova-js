@@ -21,21 +21,9 @@
 
 module.exports = [
     {
-        "id": "cordova/plugins/navigation",
-        "clobbers": [
-            "nt.navigation"
-        ]
-    },
-    {
-        "id": "cordova/plugins/notification",
-        "clobbers": [
-            "nt.notification"
-        ]
-    },
-    {
         "id": "cordova/plugins/device",
         "clobbers": [
-            "nt.device"
+            "window.device"
         ]
     },
     {
@@ -53,25 +41,13 @@ module.exports = [
     {
         "id": "cordova/plugins/Camera",
         "clobbers": [
-            "nt.camera"
+            "window.camera"
         ]
     },
     {
         "id": "cordova/plugins/CameraPopoverHandle",
         "clobbers": [
             "CameraPopoverHandle"
-        ]
-    },
-    {
-        "id": "cordova/plugins/ajax",
-        "clobbers": [
-            "nt.ajax"
-        ]
-    },
-    {
-        "id": "cordova/plugins/image",
-        "clobbers": [
-            "nt.image"
         ]
     }
 ];
